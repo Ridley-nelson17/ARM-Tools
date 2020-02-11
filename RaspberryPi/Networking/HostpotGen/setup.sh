@@ -32,7 +32,6 @@ cat <<EOT >> dhcpcd.conf
 #controlgroup wheel
 
 # Inform the DHCP server of our hostname for DDNS. 
-# CHANGE THIS ->
 hostname
 
 # Use the hardware address of the interface for the Client ID.
@@ -137,16 +136,15 @@ EOT
 ################ Enable the Wireless network ################
 #############################################################
 { # try
-    sudo cp config/hostapd /etc/default/hostapd
-    sudo cp config/dhcpcd.conf /etc/dhcpcd.conf
-    sudo cp config/dnsmasq.conf /etc/dnsmasq.conf
-    sudo cp wpa.conf /etc/wpa_supplicant/wpa_supplicant.conf
+    sudo mv hostapd /etc/default/hostapd
+    sudo mv dhcpcd.conf /etc/dhcpcd.conf
+    sudo mv dnsmasq.conf /etc/dnsmasq.conf
+    sudo mv wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
     sudo reboot now
 } || { # catch
-    cp config/hostapd /etc/default/hostapd
-    cp config/dhcpcd.conf /etc/dhcpcd.conf
-    cp config/dnsmasq.conf /etc/dnsmasq.conf
-    cp wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
-    
+    mv hostapd /etc/default/hostapd
+    mv dhcpcd.conf /etc/dhcpcd.conf
+    mv dnsmasq.conf /etc/dnsmasq.conf
+    mv wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
     reboot now
 }
