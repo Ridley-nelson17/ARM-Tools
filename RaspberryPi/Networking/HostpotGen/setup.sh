@@ -31,7 +31,8 @@ cat <<EOT >> dhcpcd.conf
 # Allow users of this group to interact with dhcpcd via the control socket.
 #controlgroup wheel
 
-# Inform the DHCP server of our hostname for DDNS.
+# Inform the DHCP server of our hostname for DDNS. 
+# CHANGE THIS ->
 hostname
 
 # Use the hardware address of the interface for the Client ID.
@@ -80,7 +81,7 @@ slaac private
 
 # fallback to static profile on eth0
 #interface eth0
-#fallback static_eth0
+fallback static_eth0
 
 interface wlan0
 static ip_address=192.168.4.1/24
