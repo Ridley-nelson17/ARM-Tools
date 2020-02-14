@@ -84,6 +84,7 @@ with picamera.PiCamera(resolution='640x480', framerate=90) as camera:
 	camera.exposure_mode = "off"
 	camera.contrast = 100
 	camera.brightness = 50
+	# camera.exposure_compensation = -1
     
 	camera.start_recording(output, format='mjpeg')
     try:
