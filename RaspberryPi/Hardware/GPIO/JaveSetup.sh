@@ -8,3 +8,5 @@ curl -sSL https://pi4j.com/install | sudo bash
 # headless
 # Install the deb from https://pi4j.com/download/pi4j-1.2.deb
 sudo dpkg -i pi4j-1.2.deb
+
+# further docs here: https://pi4j.com/1.2/install.html#Java_Runtime_JREJDK
